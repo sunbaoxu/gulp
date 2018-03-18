@@ -56,7 +56,15 @@ gulp.task("webserver",function () {
   })
 });
 
-gulp.task("default",["css","js","reload","webserver"]);
+//mock server
+gulp.task('mock', function() {
+  gulp.src('./data')
+    .pipe($.mockServer({
+      port: 8090
+    }));
+});
+
+gulp.task("default",["css","js","reload","webserver","mock"]);
 
 
 
