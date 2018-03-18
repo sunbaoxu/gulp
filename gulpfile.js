@@ -58,7 +58,7 @@ gulp.task("webserver",function () {
 
 //mock server
 gulp.task('mock', function() {
-  gulp.src('./data')
+  gulp.src('.')
     .pipe($.mockServer({
       port: 8090
     }));
